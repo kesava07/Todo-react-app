@@ -91,13 +91,13 @@ class App extends React.Component {
                 <ul className="list-group">
                   {list && list.map((val, i) => (
                     <React.Fragment key={i}>
-                      <li className="text-center list-group-item">{val} &nbsp;<button className="float-right btn btn-sm btn-danger ml-2" onClick={() => this.handleDelete(val)}>Delete</button> &nbsp;
+                      <li className="text-center list-group-item"><span className="float-left">{val}</span> &nbsp;<button className="float-right btn btn-sm btn-danger ml-2" onClick={() => this.handleDelete(val)}>Delete</button> &nbsp;
                 <button className="float-right btn btn-sm btn-primary" onClick={() => this.handleEdit(val, i)}>Edit</button></li>
                     </React.Fragment>
                   ))}
                 </ul>
-                {error && <p className={`${error.includes("already") ? "warning" : null}`} style={{ color: "red" }}>{error}</p>}
-                {/* {fluxTodo && fluxTodo.map(val => <div key={val._id}>{val.name}</div>)} */}
+                {error && <p className={`text-center mt-2 m-0 ${error.includes("already") ? "warning" : null}`} style={{ color: "red" }}>{error}</p>}
+                {fluxTodo && fluxTodo.map(val => <div key={val._id}>{val.name}</div>)}
               </div>
             </div>
           </div>
